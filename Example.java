@@ -8,5 +8,5 @@ public class Example {
         new SecureRandom().nextBytes(bytes);
         new GCMParameterSpec(32, bytes);
     }
-    
+
 }

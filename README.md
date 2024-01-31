@@ -2,10 +2,21 @@
 
 This is to demonstrate that filling an array using a SecureRandom causes snyk code to flag it as a hardcoded initialisation array
 
+Failing code:
+
+```java
+public static void main(String[] args) {
+    byte[] bytes = new byte[12];
+    new SecureRandom().nextBytes(bytes);
+    new GCMParameterSpec(32, bytes);
+}
+```
+
+Snky output
 ```
 snyk code test
 
-Testing /home/roby/development/redhat-managed-kafka/upstream/snyk-false-positive ...
+Testing /home/roby/snyk-false-positive ...
 
  ✗ [High] Hardcoded Secret 
    Path: Example.java, line 9 
@@ -16,7 +27,7 @@ Testing /home/roby/development/redhat-managed-kafka/upstream/snyk-false-positive
 
 Organization:      application-services-amq-streams
 Test type:         Static code analysis
-Project path:      /home/roby/development/redhat-managed-kafka/upstream/snyk-false-positive
+Project path:      /home/roby/snyk-false-positive
 
 Summary:
 
