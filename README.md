@@ -1,6 +1,6 @@
 # false positive
 
-This is to demonstrate that filling an array using a SecureRandom causes snyk code to flag it as a hardcoded initialisation array
+This is to demonstrate that filling an array using a SecureRandom causes snyk code to flag it as a hardcoded initialisation array: SNYK-CODE CWE-547
 
 Failing code:
 
